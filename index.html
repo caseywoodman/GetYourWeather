@@ -16,22 +16,25 @@
     </nav>
     <!-- City Search -->
     <main class="flex justify-center">
-        <div class="flex justify-center w-1/4 border-2 border-black p-4 ">
-            <input class="w-3/5 border-2 border-black h-12" type="text" id="citySelect">
-            <button class="border-2 border-black w-1/5 h-12" id="searchBtn">Search</button>
+        <div class="flex justify-center w-1/4 border-2 border-black p-4 flex-col">
+            <div class="flex justify-center py-4">
+                <input class="w-3/5 border-2 border-black h-12" type="text" id="citySelect">
+                <button class="border-2 border-black w-1/5 h-12" id="searchBtn">Search</button>
+            </div>
+            <div class="flex flex-col gap-2" id="searchAreaDiv"></div>
         </div>
         <div class="w-7/12 border-2 border-black p-4 flex-col">
             <!-- Todays weather -->
             <!-- Stacked on 5day weather -->
-            <div class="border-2 border-black w-100 p-4 flex justify-between">
+            <div class="w-100 p-4 flex justify-between bg-indigo-600 text-white">
                 <div class="flex-col">
-                    <div class="font-bold text-lg" id="cityName">City Name</div>
-                    <div>Temp: <span id="currentTemp"></span></div>
-                    <div>Wind: <span id="currentWind"></span></div>
-                    <div>Humidity: <span id="currentHumidity">44 %</span></div>
+                    <div class="font-bold text-lg" id="cityName"></div>
+                    <div id="currentTemp"></div>
+                    <div id="currentWind"></div>
+                    <div id="currentHumidity"></div>
                 </div>
                 <div>
-                    <img src="ICON" alt="Current Weather Icon" id="currentIcon">
+                    <img src="" alt="" id="currentIcon">
                 </div>
             </div>
             <!-- 5 Day Weather -->
