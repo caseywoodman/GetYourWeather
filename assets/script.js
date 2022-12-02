@@ -8,6 +8,8 @@ let currentIcon = document.querySelector("#currentIcon");
 let forecastDiv = document.querySelector("#forcastDiv");
 let searchAreaDiv = document.querySelector("#searchAreaDiv");
 let cityName = document.querySelector("#cityName");
+let fiveDayDiv = document.querySelector("#fiveDayDiv");
+
 let appId = "c1a401c2171b4a3ca3969046ad42c547";
 let pastSearch = [];
 let cityToSearch = citySelect.value;
@@ -22,7 +24,7 @@ function init() {
   pastSearch.forEach((search) => {
     let pastSearchBtn = document.createElement("button");
     pastSearchBtn.textContent = search.toUpperCase();
-    pastSearchBtn.setAttribute("class", "bg-indigo-600 w-full p-4 text-white font-bold");
+    pastSearchBtn.setAttribute("class", "bg-[#0197f6] w-full p-4 text-white font-bold");
     pastSearchBtn.setAttribute("id", "pastSearchBtn");
     pastSearchBtn.setAttribute("name", "cityButton");
     pastSearchBtn.setAttribute("city", search.toUpperCase());
@@ -66,7 +68,8 @@ function citySearch() {
           let listTemp = list.main.temp;
           let listWind = `${list.wind.speed} MPH`;
           let listHumidity = `${list.main.humidity}%`;
-          forecastDiv.innerHTML += `<div class="flex flex-col border-2 border-indigo-600 min-w-125 grow items-center"><div class="bg-indigo-600 text-white w-full text-center font-semibold">${listDate}</div><img class="w-16 h-16" src="${listIcon}" alt="${listIconAlt}"></img><div>Temp: ${listTemp}</div><div>Wind: ${listWind}</div><div>Humidity: ${listHumidity}</div></div>`;
+          fiveDayDiv.setAttribute("class", "w-100 p-4 flex justify-between bg-[#02182B] text-white");
+          forecastDiv.innerHTML += `<div class="flex flex-col border-2 border-[#0197f6] min-w-125 grow items-center bg-white"><div class="bg-[#0197f6] text-white w-full text-center font-semibold">${listDate}</div><img class="w-16 h-16" src="${listIcon}" alt="${listIconAlt}"></img><div>Temp: ${listTemp}</div><div>Wind: ${listWind}</div><div>Humidity: ${listHumidity}</div></div>`;
         }
       });
       let citySave = citySelect.value;

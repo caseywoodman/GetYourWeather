@@ -9,24 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex flex-col">
+<body class="flex flex-col bg-[#D8ecfd]">
     <!-- Weather Header -->
-    <nav class="border-2 border-black p-4 w-5/6 m-auto text-center bg-indigo-600">
+    <nav class=" p-4 w-5/6 m-auto text-center bg-[#02182B] text-white text-xl font-bold">
         <H1>LOCAL WEATHER REPORT</H1>
     </nav>
     <!-- City Search -->
-    <main class="flex justify-center">
-        <div class="flex justify-center w-1/4 border-2 border-black p-4 flex-col">
-            <div class="flex justify-center py-4">
-                <input class="w-3/5 border-2 border-black h-12" type="text" id="citySelect">
-                <button class="border-2 border-black w-1/5 h-12" id="searchBtn">Search</button>
+    <main class="flex flex-col md:flex-row md:items-start items-center justify-center">
+        <div class="flex justify-center w-5/6 md:w-1/4 flex-col">
+            <div class="flex flex-col items-center py-4 gap-2 bg-[#b1d9fb]">
+                <h2 class="text-[#02182B] font-semibold text-lg">SEARCH YOUR CITY</h2>
+                <input class="w-3/4 border-2 border-[#02182B] h-12 text-center md:w-4/5" type="text" id="citySelect"
+                    placeholder="Enter City Name">
+                <button class="border-2 border-[#02182B] w-3/4 h-12 md:w-4/5 " id="searchBtn">Search</button>
             </div>
-            <div class="flex flex-col gap-2" id="searchAreaDiv"></div>
+            <div class="flex flex-col gap-2 p-4" id="searchAreaDiv"></div>
         </div>
-        <div class="w-7/12 border-2 border-black p-4 flex-col">
+        <div class="md:w-7/12 w-5/6 p-4 flex-col">
             <!-- Todays weather -->
             <!-- Stacked on 5day weather -->
-            <div class="w-100 p-4 flex justify-between bg-indigo-600 text-white">
+            <div id="fiveDayDiv">
                 <div class="flex-col">
                     <div class="font-bold text-lg" id="cityName"></div>
                     <div id="currentTemp"></div>
@@ -38,7 +40,7 @@
                 </div>
             </div>
             <!-- 5 Day Weather -->
-            <div class="border-6 border-black w-100 py-4 flex gap-2 justify-between flex-wrap" id="forcastDiv">
+            <div class="w-100 py-4 flex flex-col xl:flex-row gap-2 justify-between" id="forcastDiv">
             </div>
         </div>
         <!-- Last 10 Searches -->
